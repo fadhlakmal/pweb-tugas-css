@@ -1,0 +1,112 @@
+body {
+    color: #242526;
+    background: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    margin: 0;
+}
+
+:root {
+    --dark-color: #635bff;
+    --light-color: #80e9ff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+
+#dark {
+    fill: var(--dark-color);
+}
+
+#light {
+    fill: var(--light-color);
+}
+
+#dark1,
+#light1,
+#dark2 {
+    transition: all 1s ease;
+}
+
+@keyframes lightFade {
+
+    50%,
+    100% {
+        transform: translateX(20%);
+    }
+}
+
+@keyframes dark1Fade {
+
+    50%,
+    100% {
+        transform: translateX(40%);
+        opacity: 0;
+    }
+}
+
+@keyframes dark2Fade {
+
+    50%,
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+#light1 {
+    animation: lightFade 6s infinite;
+}
+
+#dark1 {
+    transform: translateX(10%);
+    animation: dark1Fade 6s infinite;
+}
+
+#dark2 {
+    transform: translateX(-40%);
+    animation: dark2Fade 6s infinite;
+}
+
+#skeleton {
+    animation: fadeInUp 1s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#bolt g {
+    opacity: 0;
+    animation: dropIn 8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+    animation-delay: calc(var(--order) * 200ms);
+    animation-iteration-count: infinite;
+}
+
+@keyframes dropIn {
+    20% {
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    30%,
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
